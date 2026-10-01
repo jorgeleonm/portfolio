@@ -1,96 +1,98 @@
 # Portafolio de Jorge León
 
-Sitio web profesional de Jorge Enrique León Mera, Ingeniero de Infraestructura TI.
+Sitio web profesional de **Jorge Enrique León Mera**, Especialista en Infraestructura TI con más de 10 años de experiencia en infraestructura, cloud y gestión de servicios.
+
+🌐 **Sitio en vivo:** https://jelm.site
+
+[![Deploy to AWS S3](https://github.com/jorgeleonm/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/jorgeleonm/portfolio/actions/workflows/deploy.yml)
 
 ## 📋 Descripción
 
-Portafolio responsivo construido con HTML, CSS y JavaScript puro (sin dependencias externas). Alojado en AWS S3 + CloudFront con despliegue automático via GitHub Actions.
+Portafolio responsivo construido con HTML, CSS y JavaScript puro, sin frameworks ni dependencias externas. Se aloja en AWS con S3 y CloudFront, y se despliega automáticamente con GitHub Actions en cada push a `main`.
 
-## 🚀 Características
+## 🏗️ Arquitectura
 
-- **Responsivo**: Funciona perfectamente en mobile, tablet y desktop
-- **Rápido**: Optimizado para performance
-- **Seguro**: Alojado en HTTPS con certificado SSL
-- **Actualización automática**: CI/CD con GitHub Actions
-- **Sin dependencias**: Solo HTML, CSS, JavaScript vanilla
+```mermaid
+flowchart LR
+    U[Visitante] -->|HTTPS| R53[Route 53<br/>jelm.site / www]
+    R53 -->|Alias A| CF[CloudFront CDN]
+    ACM[ACM Certificate<br/>us-east-1] -.->|TLS| CF
+    CF -->|Origen| S3[(S3 Bucket<br/>sitio estático)]
+    GH[GitHub Actions] -->|sync + invalidación| S3
+```
+
+| Componente | Función |
+|---|---|
+| **Route 53** | DNS de `jelm.site` y `www.jelm.site`, con registros Alias hacia CloudFront |
+| **ACM** | Certificado SSL/TLS público y gratuito, validado por DNS y renovado automáticamente (en us-east-1, requisito de CloudFront) |
+| **CloudFront** | CDN global con HTTPS y caché en ubicaciones de borde |
+| **S3** | Almacenamiento de los archivos estáticos del sitio |
+| **GitHub Actions** | Pipeline de despliegue continuo |
+
+## 🚀 Pipeline de despliegue (CI/CD)
+
+Cada push a `main` ejecuta el workflow [`deploy.yml`](.github/workflows/deploy.yml), que hace lo siguiente:
+
+1. Obtiene el código del repositorio.
+2. Se autentica en AWS con credenciales IAM guardadas en GitHub Secrets.
+3. Sincroniza los archivos con el bucket S3 (`aws s3 sync --delete`), excluyendo los archivos que no forman parte del sitio (`.git`, `.github`, `*.md`, `.gitignore`).
+4. Invalida la caché de CloudFront para que los visitantes vean la versión nueva de inmediato.
+
+El despliegue completo tarda alrededor de 20 segundos. También se puede lanzar manualmente desde la pestaña **Actions** (`workflow_dispatch`).
+
+### Verificar un despliegue
+
+```bash
+# Primera petición después de la invalidación: "Miss from cloudfront"
+# Peticiones siguientes: "Hit from cloudfront"
+curl -sI https://jelm.site | grep -i x-cache
+```
+
+## 🧭 Decisiones de diseño
+
+- **Migración desde EC2:** el sitio se servía inicialmente desde una instancia EC2 t3.micro. Lo migré a S3 + CloudFront para eliminar la administración del servidor (parches, reinicios, monitoreo), reducir costos y mejorar los tiempos de carga con la CDN.
+- **Arquitectura serverless:** al ser un sitio estático, no hace falta un servidor encendido. S3 y CloudFront escalan solos y el costo depende del tráfico real.
+- **HTTPS con certificado gestionado:** ACM emite y renueva el certificado sin intervención manual.
+- **Invalidación en cada despliegue:** evita que CloudFront siga sirviendo la versión anterior hasta que expire su caché.
 
 ## 📁 Estructura
 
 ```
 portfolio/
-├── index.html       # Página principal
-├── styles.css       # Estilos (con variables CSS)
-├── script.js        # Interactividad
-├── README.md        # Este archivo
-└── .gitignore       # Archivos ignorados por Git
+├── .github/
+│   └── workflows/
+│       └── deploy.yml   # Pipeline de despliegue a S3 + CloudFront
+├── index.html           # Página principal
+├── styles.css           # Estilos (con variables CSS)
+├── script.js            # Interactividad
+├── README.md            # Este archivo
+└── .gitignore           # Archivos ignorados por Git
 ```
 
 ## 🛠️ Desarrollo local
 
 1. Clona el repositorio:
+
 ```bash
-git clone https://github.com/tu-usuario/portfolio.git
+git clone https://github.com/jorgeleonm/portfolio.git
 cd portfolio
 ```
 
-2. Abre en tu navegador:
+2. Levanta un servidor local:
+
 ```bash
-# Opción 1: Abre directamente el archivo
-open index.html
-
-# Opción 2: Usa un servidor local (Python 3)
 python3 -m http.server 8000
-# Luego abre http://localhost:8000
 ```
 
-## 🔧 Personalización
-
-### Cambiar datos personales
-
-Edita `index.html` y busca los siguientes puntos:
-
-- **Email**: Busca `mailto:jorge@example.com`
-- **LinkedIn**: Busca el enlace de LinkedIn
-- **GitHub**: Busca el enlace de GitHub
-- **Descripción**: Modifica las secciones de "Sobre mí" y "Proyectos"
-
-### Cambiar colores
-
-En `styles.css`, modifica las variables:
-```css
-:root {
-    --primary-color: #2563eb;        /* Azul principal */
-    --secondary-color: #1e40af;      /* Azul secundario */
-    --text-color: #1f2937;           /* Color del texto */
-    --light-bg: #f9fafb;             /* Fondo claro */
-}
-```
-
-## 🚢 Despliegue en AWS
-
-Consulta el tutorial: `aws-deployment-guide.md`
-
-Servicios utilizados:
-- **S3**: Hosting del sitio estático
-- **CloudFront**: CDN para velocidad y seguridad
-- **Route 53**: DNS management
-- **ACM**: Certificados SSL/TLS
-- **GitHub Actions**: Despliegue automático
-
-## 📊 Performance
-
-- ✅ Lighthouse Score: 95+
-- ✅ Tiempo de carga: <1s (con CloudFront)
-- ✅ Responsividad: Mobile-first
-- ✅ SEO: Optimizado
-
-## 📝 Licencia
-
-Todos los derechos reservados © 2024 Jorge León
+3. Abre http://localhost:8000 en el navegador.
 
 ## 🤝 Contacto
 
-- Email: jorge@example.com
-- LinkedIn: [Jorge León](https://linkedin.com/in/jorgeleon)
-- GitHub: [@jorgeleon](https://github.com/jorgeleon)
-- Ubicación: Guayaquil, Ecuador
+- 📧 Email: [jorgeleonm@gmail.com](mailto:jorgeleonm@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/jorgeleonm](https://linkedin.com/in/jorgeleonm)
+- 🐙 GitHub: [@jorgeleonm](https://github.com/jorgeleonm)
+- 📍 Guayaquil, Ecuador
+
+## 📝 Licencia
+
+Todos los derechos reservados © 2026 Jorge Enrique León Mera.
