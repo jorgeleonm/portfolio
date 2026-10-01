@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Página no encontrada | Jorge León</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --bg: #f9fafb;
+            --term-bg: #0f172a;
+            --term-text: #e2e8f0;
+            --term-dim: #94a3b8;
+            --term-err: #fca5a5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #e5e7eb;
+                --muted: #9ca3af;
+                --bg: #111827;
+                --primary: #60a5fa;
+                --primary-dark: #93c5fd;
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.25rem;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        main {
+            width: 100%;
+            max-width: 36rem;
+        }
+
+        h1 {
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            color: var(--muted);
+            margin-bottom: 1.75rem;
+        }
+
+        .terminal {
+            background: var(--term-bg);
+            color: var(--term-text);
+            border-radius: 8px;
+            padding: 1.1rem 1.25rem;
+            margin-bottom: 2rem;
+            font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .terminal .prompt { color: var(--term-dim); }
+        .terminal .err { color: var(--term-err); }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 0.6rem 1.1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        nav a.primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            nav a.primary { color: #111827; }
+        }
+
+        nav a:hover { border-color: var(--primary-dark); }
+        nav a.primary:hover { background: var(--primary-dark); }
+
+        nav a:focus-visible {
+            outline: 3px solid var(--primary-dark);
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="terminal" aria-hidden="true"><span class="prompt">$</span> curl -I https://jelm.site<span id="path">/esta-ruta</span>
+<span class="err">HTTP/1.1 404 Not Found</span>
+X-Cache: Error from cloudfront</div>
+
+        <h1>Esta página no existe</h1>
+        <p>La dirección que abriste no corresponde a ninguna página del sitio. Puede que el enlace esté mal escrito o que la página se haya movido.</p>
+
+        <nav aria-label="Secciones del sitio">
+            <a class="primary" href="/">Ir al inicio</a>
+            <a href="/#proyectos">Ver proyectos</a>
+            <a href="/#contacto">Contactar</a>
+        </nav>
+    </main>
+
+    <script>
+        // Muestra en la terminal la ruta que el visitante intentó abrir
+        const path = window.location.pathname;
+        if (path && path !== "/404.html") {
+            document.getElementById("path").textContent = path;
+        }
+    </script>
+</body>
+</html>
