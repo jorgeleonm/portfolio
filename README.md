@@ -26,7 +26,7 @@ flowchart LR
 | **Route 53** | DNS de `jelm.site` y `www.jelm.site`, con registros Alias hacia CloudFront |
 | **ACM** | Certificado SSL/TLS público y gratuito, validado por DNS y renovado automáticamente (en us-east-1, requisito de CloudFront) |
 | **CloudFront** | CDN global con HTTPS y caché en ubicaciones de borde |
-| **S3** | Almacenamiento de los archivos estáticos del sitio |
+| **S3** | Almacenamiento privado y cifrado de los archivos estáticos, accesible solo desde CloudFront (OAC) |
 | **GitHub Actions** | Pipeline de despliegue continuo |
 
 ## 🚀 Pipeline de despliegue (CI/CD)
@@ -53,7 +53,9 @@ curl -sI https://jelm.site | grep -i x-cache
 - **Migración desde EC2:** el sitio se servía inicialmente desde una instancia EC2 t3.micro. Lo migré a S3 + CloudFront para eliminar la administración del servidor (parches, reinicios, monitoreo), reducir costos y mejorar los tiempos de carga con la CDN.
 - **Arquitectura serverless:** al ser un sitio estático, no hace falta un servidor encendido. S3 y CloudFront escalan solos y el costo depende del tráfico real.
 - **HTTPS con certificado gestionado:** ACM emite y renueva el certificado sin intervención manual.
+- **Bucket privado con Origin Access Control (OAC):** el bucket S3 no es público; solo CloudFront puede leer sus objetos, mediante una política que autoriza únicamente a esta distribución. Block Public Access está activado y los archivos se cifran en reposo (SSE-S3). Todo el tráfico pasa por la CDN y por HTTPS.
 - **Invalidación en cada despliegue:** evita que CloudFront siga sirviendo la versión anterior hasta que expire su caché.
+- **Página de error personalizada:** CloudFront convierte los errores 403 y 404 del origen en una respuesta `404` con `404.html`. Con OAC, S3 responde 403 ante archivos inexistentes para no revelar qué objetos hay en el bucket; esta regla hace que el visitante vea una página útil en lugar del XML de AWS.
 
 ## 📁 Estructura
 
@@ -63,6 +65,7 @@ portfolio/
 │   └── workflows/
 │       └── deploy.yml   # Pipeline de despliegue a S3 + CloudFront
 ├── index.html           # Página principal
+├── 404.html             # Página de error personalizada
 ├── styles.css           # Estilos (con variables CSS)
 ├── script.js            # Interactividad
 ├── README.md            # Este archivo
