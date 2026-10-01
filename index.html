@@ -3,143 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge León - Especialista Infraestructura TI</title>
+    <title>JORGE LEON | Infraestructura y Soporte TI</title>
+    <meta name="description" content="Jorge Leon: 20 años en TI, líder de Infraestructura y Soporte TI en MSC Ecuador. Infraestructura híbrida, ITSM, observabilidad y seguridad perimetral. Guayaquil, Ecuador.">
+    <meta property="og:title" content="JORGE LEON | Infraestructura y Soporte TI">
+    <meta property="og:description" content="20 años en TI. Infraestructura híbrida (Azure, AWS), ITSM con ServiceNow, observabilidad con Datadog y seguridad perimetral Fortinet.">
+    <meta property="og:url" content="https://jelm.site">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_EC">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Jorge León</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+    <header class="navbar">
+        <div class="nav-inner">
+            <a href="#inicio" class="logo">JORGE LEON</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="nav-menu" class="nav-menu" aria-label="Secciones">
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#experiencia">Experiencia</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#formacion">Formación</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Especialista Infraestructura TI</h1>
-                <p>Especializado en AWS, Cloud, ITSM y Soporte Empresarial | DevOps Engineer</p>
-                <p class="experience">10+ años de experiencia en Infraestructura y Soluciones Digitales</p>
-                <a href="#contacto" class="btn btn-primary">Contáctame</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre mí -->
-    <section id="sobre-mi" class="about">
-        <div class="container">
-            <h2>Sobre mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy un profesional con experiencia en <strong>infraestructura TI, cloud computing y gestión de servicios</strong>. He liderado equipos de soporte técnico y trabajado en la optimización de infraestructura en empresas multinacionales.</p>
-                    
-                    <h3>Habilidades clave:</h3>
-                    <ul class="skills-list">
-                        <li>☁️ AWS (EC2, S3, CloudFront, RDS, Lambda)</li>
-                        <li>🖥️ Servidores Windows/Linux</li>
-                        <li>🔧 ITSM (ServiceNow, Jira)</li>
-                        <li>📊 Monitoreo y optimización</li>
-                        <li>👥 Liderazgo de equipos</li>
-                        <li>📋 Gestión de proyectos</li>
-                    </ul>
+    <main>
+        <!-- INICIO -->
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="hero-name">Jorge León</p>
+                    <h1>Líder de Infraestructura y Soporte TI</h1>
+                    <p class="hero-sub">Infraestructura híbrida, ITSM, observabilidad y seguridad perimetral en entornos corporativos certificados. Hoy amplío ese camino hacia automatización e infraestructura como código.</p>
+                    <div class="hero-actions">
+                        <a href="#experiencia" class="btn btn-primary">Ver experiencia</a>
+                        <a href="#contacto" class="btn btn-outline">Contactar</a>
+                    </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="number">10+</span>
-                        <span class="label">Años de experiencia</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number">50+</span>
-                        <span class="label">Proyectos completados</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number">15+</span>
-                        <span class="label">Equipo liderado</span>
+
+                <div class="status" aria-label="Resumen profesional">
+                    <div class="status-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <div class="status-body">
+                        <p class="status-cmd" aria-hidden="true"><span class="prompt">$</span> jelm --status</p>
+                        <dl>
+                            <div><dt>experiencia</dt><dd>20 años en TI, 13 en MSC</dd></div>
+                            <div><dt>disponibilidad</dt><dd>99.9% en servidores y cloud</dd></div>
+                            <div><dt>usuarios</dt><dd>150+ con soporte directo</dd></div>
+                            <div><dt>vulnerabilidades</dt><dd>−40% críticas con Intune</dd></div>
+                            <div><dt>ubicación</dt><dd>Guayaquil, Ecuador</dd></div>
+                        </dl>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Proyectos -->
-    <section id="proyectos" class="projects">
-        <div class="container">
-            <h2>Proyectos Destacados</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">☁️</div>
-                    <h3>Migración a AWS</h3>
-                    <p>Migración exitosa de 50+ servidores on-premise a AWS, reduciendo costos 40%</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">🔒</div>
-                    <h3>Infraestructura Segura</h3>
-                    <p>Implementación de VPC, Security Groups y cifrado de datos en tránsito</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">📊</div>
-                    <h3>Monitoreo y Alertas</h3>
-                    <p>Setup de CloudWatch, DataDog y dashboards en tiempo real</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">🚀</div>
-                    <h3>CI/CD Pipeline</h3>
-                    <p>Implementación de GitHub Actions, GitLab CI para despliegues automáticos</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">🌐</div>
-                    <h3>Infraestructura Global</h3>
-                    <p>Configuración de multi-región en AWS con failover automático</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">📱</div>
-                    <h3>Soporte 24/7</h3>
-                    <p>Gestión de helpdesk con SLA 99.5% y satisfacción de usuarios 95%</p>
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="section">
+            <div class="container narrow">
+                <h2>Sobre mí</h2>
+                <p>Durante casi siete años lideré la infraestructura y el soporte TI de <strong>Mediterranean Shipping Company del Ecuador (MSC)</strong>, en un entorno corporativo certificado bajo ISO 27001 y BASC, después de seis años en la misma empresa como técnico de soporte Nivel 2.</p>
+                <p>Mi trabajo se centra en mantener los servicios disponibles y seguros: infraestructura híbrida con Azure, AWS, Hyper-V y almacenamiento SAN HPE; seguridad perimetral con Fortinet, SD-WAN y MPLS; monitoreo con Datadog y Nagios; y gestión de servicios con ServiceNow bajo ITIL v4. Automatizo tareas con PowerShell y Bash, y actualmente me formo en Python, Docker y Terraform.</p>
+            </div>
+        </section>
+
+        <!-- EXPERIENCIA -->
+        <section id="experiencia" class="section section-alt">
+            <div class="container narrow">
+                <h2>Experiencia</h2>
+                <ol class="timeline">
+                    <li>
+                        <p class="tl-date">Noviembre 2019 – Agosto 2026</p>
+                        <h3>Líder de Infraestructura y Soporte TI</h3>
+                        <p class="tl-org">Mediterranean Shipping Company del Ecuador (MSC), Guayaquil</p>
+                        <ul>
+                            <li>Reestructuré los procesos ITSM con ServiceNow e ITIL v4: el tiempo de respuesta N1/N2 bajó 30% y los tickets sin resolver, 25%.</li>
+                            <li>Mantuve 99.9% de disponibilidad en Windows Server, SAN HPE, Hyper-V y servicios en Azure con Entra ID, con Backup &amp; Recovery bajo BCP/DRP e ISO 27001.</li>
+                            <li>Migré cientos de GB de respaldos a Azure Blob Storage y reduje esos costos entre 20% y 30%.</li>
+                            <li>Gestioné la observabilidad de todos los servidores de la oficina de Ecuador en Datadog, con políticas, alertas y dashboards coordinados con la matriz en Suiza.</li>
+                            <li>Reduje 40% las vulnerabilidades críticas con políticas de seguridad y conformidad en Microsoft Intune, automatizadas con PowerShell, WSUS y WUFB.</li>
+                            <li>Lideré la migración del soporte remoto de AnyDesk a ConnectWise Control, con auditoría de sesiones y transferencia segura de archivos.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="tl-date">Octubre 2013 – Octubre 2019</p>
+                        <h3>Técnico de Soporte TI / Helpdesk Nivel 2</h3>
+                        <p class="tl-org">Mediterranean Shipping Company del Ecuador (MSC), Guayaquil</p>
+                        <ul>
+                            <li>Brindé soporte avanzado a más de 150 usuarios en Microsoft 365 y Windows, con continuidad de servicio superior al 98%.</li>
+                            <li>Reduje 25% las interrupciones no planificadas con monitoreo proactivo en Nagios Core y scripts en Bash y PowerShell.</li>
+                            <li>Reforcé la seguridad del dominio con GPO, permisos granulares en Active Directory y reglas en firewalls Fortinet.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="tl-date">Agosto 2006 – Octubre 2013</p>
+                        <h3>Técnico de Soporte e Infraestructura</h3>
+                        <p class="tl-org">Copol English Institute (COPEI), Guayaquil</p>
+                        <ul>
+                            <li>Administré la red local sobre arquitectura Cisco con 99.5% de disponibilidad.</li>
+                            <li>Atendí a más de 100 usuarios con un tiempo de respuesta promedio de 2 horas y 95% de satisfacción.</li>
+                            <li>Extendí 20% la vida útil de los equipos con un plan de mantenimiento y Backup &amp; Recovery.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="tl-date">Enero 2005 – Febrero 2006</p>
+                        <h3>Encargado de Soporte Técnico</h3>
+                        <p class="tl-org">Unidad Educativa Salesiana "Cristóbal Colón", Guayaquil</p>
+                        <ul>
+                            <li>Mantuve el 100% de disponibilidad de laboratorios y sistemas administrativos para más de 300 estudiantes y personal.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="section">
+            <div class="container">
+                <h2>Proyectos</h2>
+                <p class="section-intro">Proyectos personales de autoformación, con el código publicado.</p>
+                <div class="projects">
+                    <article class="project">
+                        <h3>Este sitio: S3, CloudFront y CI/CD</h3>
+                        <p>Sitio estático servido desde un bucket S3 privado con Origin Access Control, cifrado en reposo y CloudFront con HTTPS (ACM) y dominio propio en Route 53. Cada push a GitHub lo despliega automáticamente con GitHub Actions e invalida la caché.</p>
+                        <p class="tags">AWS S3, CloudFront, Route 53, ACM, GitHub Actions</p>
+                        <a href="https://github.com/jorgeleonm/portfolio" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                    </article>
+                    <article class="project">
+                        <h3>AI Endpoint Doctor</h3>
+                        <p>Sistema serverless de diagnóstico de equipos Windows y Linux con PowerShell, Cloudflare Workers y la API de Google Gemini, con reintentos y cambio automático de modelo. Un flujo en n8n envía las alertas críticas a Telegram y registra el historial en Google Sheets. La remediación automática está en desarrollo.</p>
+                        <p class="tags">PowerShell, Cloudflare Workers, Gemini API, n8n</p>
+                        <a href="https://github.com/jorgeleonm/ai-endpoint-doctor" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                    </article>
+                    <article class="project">
+                        <h3>De EC2 con Nginx a arquitectura serverless</h3>
+                        <p>Primera versión del sitio en una instancia EC2 con Nginx: Security Groups, acceso SSH con llaves, actualizaciones y hardening básico. Luego la migré a S3 y CloudFront para eliminar la administración del servidor y reducir costos.</p>
+                        <p class="tags">AWS EC2, Nginx, Linux, Security Groups</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <div class="contact-content">
-                <p>¿Interesado en trabajar conmigo o tienes preguntas? ¡Contáctame!</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="icon">📧</span>
-                        <a href="mailto:jorgeleonm@gmail.com">jorgeleonm@gmail.com</a>
+        <!-- HABILIDADES -->
+        <section id="habilidades" class="section section-alt">
+            <div class="container">
+                <h2>Habilidades</h2>
+                <div class="skills">
+                    <div class="skill-group">
+                        <h3>Cloud y virtualización</h3>
+                        <p>Microsoft Azure, Entra ID, Intune, Azure Blob Storage, AWS (S3, EC2, CloudFront), Hyper-V, VMware, SAN HPE</p>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon">💼</span>
-                        <a href="https://linkedin.com/in/jorgeleonm" target="_blank">LinkedIn</a>
+                    <div class="skill-group">
+                        <h3>Seguridad y redes</h3>
+                        <p>Fortinet FortiGate, VPN IPsec/SSL, SD-WAN, MPLS, HP Aruba, Cisco</p>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon">🐙</span>
-                        <a href="https://github.com/jorgeleonm" target="_blank">GitHub</a>
+                    <div class="skill-group">
+                        <h3>Sistemas y bases de datos</h3>
+                        <p>Windows Server 2008–2022, Active Directory, GPO, WSUS, Linux (Red Hat/CentOS), Microsoft 365, SQL Server, T-SQL</p>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <span>Guayaquil, Ecuador</span>
+                    <div class="skill-group">
+                        <h3>Observabilidad</h3>
+                        <p>Datadog (políticas, alertas y dashboards), Nagios Core</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Gestión de servicios</h3>
+                        <p>ServiceNow, Spiceworks, ITIL v4, gestión de incidentes y SLAs, ConnectWise Control</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Automatización</h3>
+                        <p>PowerShell, Bash, Git, GitHub Actions. En formación: Python, Docker y Terraform</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Cumplimiento y continuidad</h3>
+                        <p>ISO 27001, ISO 9001, BASC, Backup &amp; Recovery, BCP/DRP</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Idiomas</h3>
+                        <p>Español nativo, inglés avanzado (B2)</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- FORMACIÓN -->
+        <section id="formacion" class="section">
+            <div class="container narrow">
+                <h2>Formación</h2>
+                <div class="edu">
+                    <h3>Tecnología en Análisis de Sistemas</h3>
+                    <p>Instituto Tecnológico Bolivariano (ITB), Guayaquil, 2024. Título de tercer nivel.</p>
+                </div>
+                <h3 class="sub-heading">Certificaciones y cursos</h3>
+                <ul class="courses">
+                    <li><span>ITIL Foundation v4</span><span>2023</span></li>
+                    <li><span>Curso AZ-104T00: Microsoft Azure Administrator, Akros Corp</span><span>2022</span></li>
+                    <li><span>Curso AZ-204T00: Developing Solutions for Microsoft Azure, Akros Corp</span><span>2022</span></li>
+                    <li><span>Curso AZ-400T00: Microsoft DevOps Solutions, Akros Corp</span><span>2021</span></li>
+                    <li><span>Curso 20778: Analyzing Data with Power BI, Akros Corp</span><span>2019</span></li>
+                    <li><span>Curso 10775: Administering Microsoft SQL Server Databases, Maint</span><span>2014</span></li>
+                    <li><span>Microsoft Technology Associate: Server, Networking &amp; Security Fundamentals</span><span>2013</span></li>
+                    <li><span>Cisco CCNA, módulos 1 a 4, Academia Cisco UPS</span><span></span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="section section-alt">
+            <div class="container narrow">
+                <h2>Contacto</h2>
+                <p>Si buscas a alguien para infraestructura, soporte o gestión de servicios TI, escríbeme.</p>
+                <ul class="contact">
+                    <li><span class="c-label">Email</span><a href="mailto:jorgeleonm@gmail.com">jorgeleonm@gmail.com</a></li>
+                    <li><span class="c-label">LinkedIn</span><a href="https://linkedin.com/in/jorgeleonm" target="_blank" rel="noopener noreferrer">linkedin.com/in/jorgeleonm</a></li>
+                    <li><span class="c-label">GitHub</span><a href="https://github.com/jorgeleonm" target="_blank" rel="noopener noreferrer">github.com/jorgeleonm</a></li>
+                    <li><span class="c-label">Ubicación</span><span>Guayaquil, Ecuador</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Jorge León. Todos los derechos reservados.</p>
-        </div>
+        <p>© <span id="year">2026</span> Jorge Leon</p>
     </footer>
 
     <script src="script.js"></script>
