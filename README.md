@@ -1,6 +1,6 @@
 # Portafolio de Jorge León
 
-Sitio web profesional de **Jorge Enrique León Mera**, Especialista en Infraestructura TI con más de 10 años de experiencia en infraestructura, cloud y gestión de servicios.
+Sitio web profesional de **Jorge León**, Especialista en Infraestructura TI con más de 10 años de experiencia en infraestructura, cloud y gestión de servicios.
 
 🌐 **Sitio en vivo:** https://jelm.site
 
