@@ -39,7 +39,7 @@
         <section id="inicio" class="hero">
             <div class="container hero-grid">
                 <div class="hero-text">
-                    <p class="hero-name">Jorge León</p>
+                    <p class="hero-name">Jorge Leon</p>
                     <h1>Líder de Infraestructura y Soporte TI</h1>
                     <p class="hero-sub">Infraestructura híbrida, ITSM, observabilidad y seguridad perimetral en entornos corporativos certificados. Hoy amplío ese camino hacia automatización e infraestructura como código.</p>
                     <div class="hero-actions">
@@ -69,7 +69,7 @@
             <div class="container narrow">
                 <h2>Sobre mí</h2>
                 <p>Durante casi siete años lideré la infraestructura y el soporte TI de <strong>Mediterranean Shipping Company del Ecuador (MSC)</strong>, en un entorno corporativo certificado bajo ISO 27001 y BASC, después de seis años en la misma empresa como técnico de soporte Nivel 2.</p>
-                <p>Mi trabajo se centra en mantener los servicios disponibles y seguros: infraestructura híbrida con Azure, AWS, Hyper-V y almacenamiento SAN HPE; seguridad perimetral con Fortinet, SD-WAN y MPLS; monitoreo con Datadog y Nagios; y gestión de servicios con ServiceNow bajo ITIL v4. Automatizo tareas con PowerShell y Bash, y actualmente me formo en Python, Docker y Terraform.</p>
+                <p>Mi trabajo se centra en mantener los servicios disponibles y seguros: infraestructura híbrida con Azure, AWS, Hyper-V y almacenamiento SAN HPE; seguridad perimetral con Fortinet, SD-WAN y MPLS; monitoreo con Datadog y Nagios; y gestión de servicios con ServiceNow bajo ITIL v4. Automatizo tareas con PowerShell y Bash, gestiono con Terraform parte de la infraestructura de este sitio y actualmente me formo en Python y Docker.</p>
             </div>
         </section>
 
@@ -130,10 +130,19 @@
                 <p class="section-intro">Proyectos personales de autoformación, con el código publicado.</p>
                 <div class="projects">
                     <article class="project">
-                        <h3>Este sitio: S3, CloudFront y CI/CD</h3>
+                        <h3>Este sitio en AWS: S3, CloudFront y CI/CD</h3>
                         <p>Sitio estático servido desde un bucket S3 privado con Origin Access Control, cifrado en reposo y CloudFront con HTTPS (ACM) y dominio propio en Route 53. Cada push a GitHub lo despliega automáticamente con GitHub Actions e invalida la caché.</p>
                         <p class="tags">AWS S3, CloudFront, Route 53, ACM, GitHub Actions</p>
                         <a href="https://github.com/jorgeleonm/portfolio" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                    </article>
+                    <article class="project">
+                        <h3>El mismo sitio en Azure con Terraform</h3>
+                        <p>Azure Static Web App en plan gratuito definida como código con Terraform, con dominio propio (azure.jelm.site) validado por CNAME en Route 53 y certificado SSL gestionado. Cada push al repositorio del sitio despliega en paralelo a AWS y a Azure con GitHub Actions.</p>
+                        <p class="tags">Terraform, Azure Static Web Apps, GitHub Actions, Route 53</p>
+                        <div class="project-links">
+                            <a href="https://github.com/jorgeleonm/azure-static-site-terraform" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                            <a href="https://azure.jelm.site" target="_blank" rel="noopener noreferrer">Ver en Azure</a>
+                        </div>
                     </article>
                     <article class="project">
                         <h3>AI Endpoint Doctor</h3>
@@ -157,7 +166,7 @@
                 <div class="skills">
                     <div class="skill-group">
                         <h3>Cloud y virtualización</h3>
-                        <p>Microsoft Azure, Entra ID, Intune, Azure Blob Storage, AWS (S3, EC2, CloudFront), Hyper-V, VMware, SAN HPE</p>
+                        <p>Microsoft Azure, Entra ID, Intune, Azure Blob Storage, Azure Static Web Apps, AWS (S3, CloudFront, Route 53, EC2), Hyper-V, VMware, SAN HPE</p>
                     </div>
                     <div class="skill-group">
                         <h3>Seguridad y redes</h3>
@@ -177,7 +186,7 @@
                     </div>
                     <div class="skill-group">
                         <h3>Automatización</h3>
-                        <p>PowerShell, Bash, Git, GitHub Actions. En formación: Python, Docker y Terraform</p>
+                        <p>PowerShell, Bash, Git, GitHub Actions, Terraform (nivel básico). En formación: Python y Docker</p>
                     </div>
                     <div class="skill-group">
                         <h3>Cumplimiento y continuidad</h3>

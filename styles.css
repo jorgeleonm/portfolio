@@ -270,7 +270,7 @@ a:focus-visible, button:focus-visible {
 /* Proyectos */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
     gap: 1.5rem;
 }
 
@@ -339,3 +339,7 @@ a:focus-visible, button:focus-visible {
     font-size: 0.9rem;
     border-top: 1px solid var(--border);
 }
+
+/* Proyectos con más de un enlace */
+.project-links { margin-top: auto; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.project-links a { margin-top: 0; padding-top: 0; }
